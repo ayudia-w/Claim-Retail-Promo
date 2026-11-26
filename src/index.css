@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Inter", "DM Sans", "Segoe UI", Arial, sans-serif;
+
+  --color-plum-50: #f7f3fb;
+  --color-plum-100: #efe7f7;
+  --color-plum-200: #dfd2ef;
+  --color-plum-300: #c8b4e1;
+  --color-plum-400: #a78dc8;
+  --color-plum-500: #8264aa;
+  --color-plum-600: #705397;
+  --color-plum-700: #5d437f;
+  --color-plum-800: #4a3566;
+  --color-plum-900: #39284f;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #faf7fc;
+    color: #2c223a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums,
+.font-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "zero" 0;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 4mm 9mm !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-container {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  .print-container > * + * {
+    margin-top: 0 !important;
+  }
+
+  .print-memo-block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    margin: 0 !important;
+    padding: 4.5mm 0 2.5mm 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  .print-break-after {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .print-meta-table {
+    width: auto !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .print-meta-table td {
+    padding: 1.5px 10px 1.5px 0 !important;
+    line-height: 1.3 !important;
+  }
+
+  .print-meta-table button,
+  .print-meta-table span {
+    min-height: 0 !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    line-height: 1.3 !important;
+  }
+
+  .print-excel-table {
+    width: auto !important;
+    max-width: 100% !important;
+    table-layout: auto !important;
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-excel-table th,
+  .print-excel-table td {
+    border-color: #000000 !important;
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-excel-table th {
+    padding: 2.5px 6px !important;
+    white-space: nowrap !important;
+  }
+
+  .print-excel-table td {
+    padding: 2px 6px !important;
+  }
+
+  .print-excel-table button,
+  .print-excel-table span {
+    min-height: 0 !important;
+    padding: 0 !important;
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-excel-table td > div {
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+  }
+}
